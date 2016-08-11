@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sdk-test.stratumn.rocks/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '174'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:52 GMT
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 cb25f99bdd93cc700f0f15215dd2cfe9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ifEo7Z53nlvubzU3_jHlVmV_eN9gIANrw9nPJTF2Zj1XRPn3tU4RDw==
+    body:
+      encoding: UTF-8
+      string: '{"id":"572778542311def814311315","name":"sdk-test","agentInfo":{"functions":{"init":{"args":["title"]},"addMessage":{"args":["content","author"]},"addTag":{"args":["tag"]}}}}'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:52 GMT
+- request:
+    method: get
+    uri: https://sdk-test.stratumn.rocks/links/9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2808'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:52 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e5b50d701ab6ada371221f746d93da45.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - deJDQRsP8fCuRdKEAe6ixObsulRewVQTdBTbiFDOCxaO7xTTa_Uu5w==
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"test","createdAt":1462205496515,"messages":[]},"meta":{"mapId":"57277c4bb25789323e109a05","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"68e229b36c5bbea18e32f3697ec237b82646ca150559b9a193e2f192f21ba6af","prevLinkHash":null,"action":"init","arguments":["test"]}},"meta":{"linkHash":"9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","evidence":{"state":"COMPLETE","merkleRoot":"2b136c5e1412de55ed656027ab2f27e7381bfb81710a00a2410330b3f07e34a0","merklePath":[{"left":"9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","right":"9288d1f265ed99eaf0adac353352555bf803a4ba4ceac0eb6b4bb9e8f2e3d023","parent":"c316c33af7b9d82f7980ec6535c33298d38ceb073c67185b552a817aa9ee408f"},{"left":"c316c33af7b9d82f7980ec6535c33298d38ceb073c67185b552a817aa9ee408f","right":"0a59f7fe2c62bf4a45eb0baad9b94f02d5f2fad553c64850113b52c04d9655d4","parent":"305e1f916f024a214f13ec653453e258e0c9ed91d47ca4c4d3d1473d004e2980"},{"left":"305e1f916f024a214f13ec653453e258e0c9ed91d47ca4c4d3d1473d004e2980","right":"29f8a661332080e8caf4f99c662348d322abcc154f852d69681525507f649c15","parent":"8c453c71ab7c857f6dba40b29156a8b71d5541fdbc382d437237d60c38f6a4c1"},{"left":"8c453c71ab7c857f6dba40b29156a8b71d5541fdbc382d437237d60c38f6a4c1","right":"e423377aca8cd5e68bceabd486fd638a8a74ec075a9a6035db30e0967f6b64de","parent":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425"},{"left":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425","parent":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425"},{"left":"017770c239cc4b500432668ef8c74dbf1cc6e4479f59d9c4e5faae8aa4fb1d19","right":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425","parent":"7c6ec4ed69d7ca003a18169b493f4dc6053e6069029fd8a18778b6bf47737f32"},{"left":"84e566e879a680961cd8b27080301f7e75e69533822877ac21246efa4bd58060","right":"7c6ec4ed69d7ca003a18169b493f4dc6053e6069029fd8a18778b6bf47737f32","parent":"84c3a989c5adf7d1f14f87d49a6e62a30127828cd48b83289f207cbd794a804a"},{"left":"5617444dd3e50c744114e55de244ca5482b2749eb2ec34ec327418930d645f82","right":"84c3a989c5adf7d1f14f87d49a6e62a30127828cd48b83289f207cbd794a804a","parent":"2b136c5e1412de55ed656027ab2f27e7381bfb81710a00a2410330b3f07e34a0"}],"transactions":{"bitcoin:main":"68b956f02e6f9aa80204ace82cd24197d5b133ed5f56e5ed7ba28eaf7722556d"}},"application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","xStratumn":{"totalTimeMs":0.159499,"loadApplicationCache":"hit","loadApplicationTimeMs":0.027916,"loadOwnerIdCache":"hit","loadOwnerIdTimeMs":0.008598999999999999,"loadInputLinkCache":"hit","loadInputLinkTimeMs":0.009098}}}'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:52 GMT
+- request:
+    method: post
+    uri: https://sdk-test.stratumn.rocks/links/9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff/addMessage
+    body:
+      encoding: UTF-8
+      string: '["Hello, World!"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1158'
+      Connection:
+      - close
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:52 GMT
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 bba3077bda68b3d477608f6f25845f47.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - pTqXUjJmI-znTqZ5s2CYUhEiDhK34LTi7X01k0y24x-wXFchu2Y8sA==
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"test","createdAt":1462205496515,"messages":[{"content":"Hello,
+        World!","author":"Anonymous","createdAt":1470928580475}]},"meta":{"mapId":"57277c4bb25789323e109a05","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"ee5cafd9fafcbc5ecc1cca53096333b56bfd6e4377c168d7ca96c61544e80e96","prevLinkHash":"9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","action":"addMessage","arguments":["Hello,
+        World!"]}},"meta":{"linkHash":"870c69a85c15f3e5ac8fbd3a68557361354259f46481916f15be448d9500fc92","xStratumn":{"agent":{"name":"/ecstatic_hugle","responseTimeMs":2.3863049999999997},"totalTimeMs":5.459098,"loadApplicationCache":"hit","loadApplicationTimeMs":0.036849,"loadOwnerIdCache":"hit","loadOwnerIdTimeMs":0.008797,"loadInputLinkCache":"hit","loadInputLinkTimeMs":0.009958,"saveOutputLinkTimeMs":2.575299,"merkleCache":"miss","merkleTimeMs":2.534316},"evidence":{"state":"QUEUED"},"application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/870c69a85c15f3e5ac8fbd3a68557361354259f46481916f15be448d9500fc92"}}'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:52 GMT
+- request:
+    method: get
+    uri: https://sdk-test.stratumn.rocks/links/9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2795'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:53 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ac9160284436f682aa040d899a265c45.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - b-sY8Y02veZ2nDE1qQlnYYNgLXKlawKt3qjJlMsiQGRbJH71Q-1SIw==
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"test","createdAt":1462205496515,"messages":[]},"meta":{"mapId":"57277c4bb25789323e109a05","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"68e229b36c5bbea18e32f3697ec237b82646ca150559b9a193e2f192f21ba6af","prevLinkHash":null,"action":"init","arguments":["test"]}},"meta":{"linkHash":"9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","evidence":{"state":"COMPLETE","merkleRoot":"2b136c5e1412de55ed656027ab2f27e7381bfb81710a00a2410330b3f07e34a0","merklePath":[{"left":"9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","right":"9288d1f265ed99eaf0adac353352555bf803a4ba4ceac0eb6b4bb9e8f2e3d023","parent":"c316c33af7b9d82f7980ec6535c33298d38ceb073c67185b552a817aa9ee408f"},{"left":"c316c33af7b9d82f7980ec6535c33298d38ceb073c67185b552a817aa9ee408f","right":"0a59f7fe2c62bf4a45eb0baad9b94f02d5f2fad553c64850113b52c04d9655d4","parent":"305e1f916f024a214f13ec653453e258e0c9ed91d47ca4c4d3d1473d004e2980"},{"left":"305e1f916f024a214f13ec653453e258e0c9ed91d47ca4c4d3d1473d004e2980","right":"29f8a661332080e8caf4f99c662348d322abcc154f852d69681525507f649c15","parent":"8c453c71ab7c857f6dba40b29156a8b71d5541fdbc382d437237d60c38f6a4c1"},{"left":"8c453c71ab7c857f6dba40b29156a8b71d5541fdbc382d437237d60c38f6a4c1","right":"e423377aca8cd5e68bceabd486fd638a8a74ec075a9a6035db30e0967f6b64de","parent":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425"},{"left":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425","parent":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425"},{"left":"017770c239cc4b500432668ef8c74dbf1cc6e4479f59d9c4e5faae8aa4fb1d19","right":"5b0a7b6584017c2aaccdbb095a9579e1b06b4252d9d57a2862b4a46e2a1b2425","parent":"7c6ec4ed69d7ca003a18169b493f4dc6053e6069029fd8a18778b6bf47737f32"},{"left":"84e566e879a680961cd8b27080301f7e75e69533822877ac21246efa4bd58060","right":"7c6ec4ed69d7ca003a18169b493f4dc6053e6069029fd8a18778b6bf47737f32","parent":"84c3a989c5adf7d1f14f87d49a6e62a30127828cd48b83289f207cbd794a804a"},{"left":"5617444dd3e50c744114e55de244ca5482b2749eb2ec34ec327418930d645f82","right":"84c3a989c5adf7d1f14f87d49a6e62a30127828cd48b83289f207cbd794a804a","parent":"2b136c5e1412de55ed656027ab2f27e7381bfb81710a00a2410330b3f07e34a0"}],"transactions":{"bitcoin:main":"68b956f02e6f9aa80204ace82cd24197d5b133ed5f56e5ed7ba28eaf7722556d"}},"application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff","xStratumn":{"totalTimeMs":0.143536,"loadApplicationCache":"hit","loadApplicationTimeMs":0.026699,"loadOwnerIdCache":"hit","loadOwnerIdTimeMs":0.008185,"loadInputLinkCache":"hit","loadInputLinkTimeMs":0.00851}}}'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:53 GMT
+recorded_with: VCR 3.0.3

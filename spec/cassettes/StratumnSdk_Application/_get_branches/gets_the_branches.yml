@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sdk-test.stratumn.rocks/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '174'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:51 GMT
+      Server:
+      - nginx
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 968f3ab48a1dd74b47de55452b46203d.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - IqshPT-HWBQcULS1gVF6MwgjfikWWFMxkeFF5bGL-P6-4IC6EEhv4w==
+    body:
+      encoding: UTF-8
+      string: '{"id":"572778542311def814311315","name":"sdk-test","agentInfo":{"functions":{"init":{"args":["title"]},"addMessage":{"args":["content","author"]},"addTag":{"args":["tag"]}}}}'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:51 GMT
+- request:
+    method: get
+    uri: https://sdk-test.stratumn.rocks/branches/9f0dec64d62e946ff8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - sdk-test.stratumn.rocks
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1905'
+      Connection:
+      - close
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 11 Aug 2016 15:21:51 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e24e9476b1da3e615a321fd696172d5a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - cxkADdb30z8_q8KdfwhFcp2gsSpm5TqXiDdao7u4B3yoxlcByPCfjA==
+    body:
+      encoding: UTF-8
+      string: '[{"link":{"meta":{"mapId":"57277a71b25789323e1099f1","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"8cbdc56041db4ea63a6548db69f3b12e296fd31dd63ee00298205733774aa989","prevLinkHash":"9f0dec64d62e946ff8723f31d2052a8662e659ddd349c35c6f3ca3eeceb68523","action":"addTag","arguments":["test"],"tags":["test"]}},"meta":{"linkHash":"7874f061d8cb77ffcfd9ce53dc131e00fa2f3f095b6513cf1298f6e600d1b902","application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/7874f061d8cb77ffcfd9ce53dc131e00fa2f3f095b6513cf1298f6e600d1b902"}},{"link":{"meta":{"mapId":"57277a71b25789323e1099f1","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"8cbdc56041db4ea63a6548db69f3b12e296fd31dd63ee00298205733774aa989","prevLinkHash":"9f0dec64d62e946ff8723f31d2052a8662e659ddd349c35c6f3ca3eeceb68523","action":"addTag","arguments":["random"],"tags":["random"]}},"meta":{"linkHash":"5aec07876898c7b5a62bc023f4afd081394b053f2243cc3be3ce242e91582760","application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/5aec07876898c7b5a62bc023f4afd081394b053f2243cc3be3ce242e91582760"}},{"link":{"meta":{"mapId":"57277a71b25789323e1099f1","agentHash":"23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c","stateHash":"9fedcd2e7594fdad16729553dd00eb32dd74a7b1e170da8cb28e45a47ceb3a02","prevLinkHash":"9f0dec64d62e946ff8723f31d2052a8662e659ddd349c35c6f3ca3eeceb68523","action":"addMessage","arguments":["test","stephan"]}},"meta":{"linkHash":"3a069843ee7934dce3ed057dfcacbf5d8f2acb88d3082fe1ec6e7768053e6b98","application":"sdk-test","applicationLocation":"https://sdk-test.stratumn.net","linkLocation":"https://sdk-test.stratumn.net/links/3a069843ee7934dce3ed057dfcacbf5d8f2acb88d3082fe1ec6e7768053e6b98"}}]'
+    http_version: 
+  recorded_at: Thu, 11 Aug 2016 15:21:51 GMT
+recorded_with: VCR 3.0.3
