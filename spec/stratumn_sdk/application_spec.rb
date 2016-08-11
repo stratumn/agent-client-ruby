@@ -15,7 +15,7 @@ describe StratumnSdk::Application, :vcr do
     end
 
     it 'raises for application not found' do
-      expect { StratumnSdk::Application.get('not-found') }.to raise_exception
+      expect { StratumnSdk::Application.get('not-found') }.to raise_exception(StandardError)
     end
   end
 
