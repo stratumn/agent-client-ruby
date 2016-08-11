@@ -1,6 +1,7 @@
 # Stratumn SDK for Ruby
 
 [![build status](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)
+[![Gem Version](https://badge.fury.io/rb/stratumn_sdk.svg)](https://badge.fury.io/rb/stratumn_sdk)
 
 Interact with your Stratumn agent from your ruby application
 
