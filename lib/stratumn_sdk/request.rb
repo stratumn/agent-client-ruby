@@ -10,7 +10,7 @@ module StratumnSdk
     def post(*args)
       result = request(:post, *args)
 
-      raise result['meta']['errorMessage'] if result.dig('meta', 'errorMessage')
+      raise result['meta']['errorMessage'] if result['meta'] && result['meta']['errorMessage']
 
       result
     end
