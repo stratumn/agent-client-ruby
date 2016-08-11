@@ -1,3 +1,4 @@
+require 'stratumn_sdk/version'
 require 'stratumn_sdk/request'
 require 'stratumn_sdk/application'
 require 'stratumn_sdk/link'
@@ -5,7 +6,6 @@ require 'stratumn_sdk/link'
 require 'yaml'
 
 module StratumnSdk
-  VERSION = "0.0.1"
 
   # Configuration defaults
   @config = {
