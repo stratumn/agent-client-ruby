@@ -40,7 +40,6 @@ Creates a new map in the application.
 
 ```ruby
 application = StratumnSdk::Application.load('quickstart')
-
 link = application.create_map('My message map')
 ```
 
