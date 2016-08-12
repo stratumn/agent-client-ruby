@@ -1,5 +1,6 @@
 require 'stratumn_sdk/version'
 require 'stratumn_sdk/request'
+require 'stratumn_sdk/helper'
 require 'stratumn_sdk/application'
 require 'stratumn_sdk/link'
 

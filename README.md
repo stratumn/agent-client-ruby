@@ -122,6 +122,9 @@ Executes a transition function and returns the new link.
 application = StratumnSdk::Application.load('quickstart')
 link = application.get_link('aee5427')
 new_link = link.addMessage('Hello, World!')
+
+# underscore version is also available
+new_link = link.add_message('Hello, World!')
 ```
 
 ## Development

@@ -1,6 +1,7 @@
 module StratumnSdk
   class Link
     include Request
+    include Helper
 
     attr_accessor :application, :meta, :state, :link, :linkHash
 
@@ -21,6 +22,8 @@ module StratumnSdk
 
           Link.new(application, result)
         end
+
+        singleton_class.send(:alias_method, underscore(method), method)
       end
     end
 

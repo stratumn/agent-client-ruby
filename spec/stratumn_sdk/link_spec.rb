@@ -9,11 +9,14 @@ describe StratumnSdk::Link, :vcr do
   describe '.initialize' do
 
     it 'adds functions for agent methods' do
-
       new_link = link.addMessage('Hello, World!')
 
       expect(new_link.state['messages'].first['content']).to eq('Hello, World!')
       expect(new_link.state['messages'].first['author']).to eq('Anonymous')
+    end
+
+    it 'aliases transition functions with camel case version' do
+      expect(link).to respond_to(:add_message)
     end
   end
 
@@ -22,12 +25,10 @@ describe StratumnSdk::Link, :vcr do
     let(:segment) { JSON.parse(File.read(File.expand_path('../../fixtures/segment.json', __FILE__))) }
 
     it 'loads the full link' do
-
       link = described_class.load(segment)
 
       expect(link.state['title']).to eq('test')
     end
-
   end
 
   describe '#previous' do
@@ -46,7 +47,6 @@ describe StratumnSdk::Link, :vcr do
   describe '#get_branches' do
 
     it 'returns the branches' do
-
       branches = link.get_branches(['test'])
 
       expect(branches.length).to eq(1)
