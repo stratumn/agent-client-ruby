@@ -1,4 +1,6 @@
 module StratumnSdk
+  ##
+  # Represents a link in a Stratumn application
   class Link
     include Request
     include Helper
@@ -14,16 +16,7 @@ module StratumnSdk
       self.linkHash = obj['meta']['linkHash']
 
       application.agent_info['functions'].each do |(method, _)|
-        define_singleton_method(method) do |*args|
-
-          url = "#{application.url}/links/#{linkHash}/#{method}"
-
-          result = post(url, json: args)
-
-          Link.new(application, result)
-        end
-
-        singleton_class.send(:alias_method, underscore(method), method)
+        add_transition_method(method)
       end
     end
 
@@ -42,9 +35,26 @@ module StratumnSdk
     def self.load(segment)
       meta = segment['meta']
 
-      application = Application.load(meta['application'], meta['applicationLocation'])
+      application = Application.load(
+        meta['application'],
+        meta['applicationLocation']
+      )
 
       application.get_link(meta['linkHash'])
+    end
+
+    private
+
+    def add_transition_method(method)
+      define_singleton_method(method) do |*args|
+        url = "#{application.url}/links/#{linkHash}/#{method}"
+
+        result = post(url, json: args)
+
+        self.class.new(application, result)
+      end
+
+      singleton_class.send(:alias_method, underscore(method), method)
     end
   end
 end

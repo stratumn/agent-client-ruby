@@ -1,4 +1,6 @@
 module StratumnSdk
+  ##
+  # Represents a Stratumn application
   class Application
     include Request
     extend Request
@@ -6,10 +8,14 @@ module StratumnSdk
     attr_accessor :url, :id, :name, :agent_info
 
     def self.load(application_name, application_location = nil)
-      url = application_location || StratumnSdk.config[:application_url].gsub('%s', application_name)
+      url = application_location ||
+            StratumnSdk.config[:application_url].gsub('%s', application_name)
       attributes = get(url)
 
-      self.new(url, attributes['id'], attributes['name'], attributes['agentInfo'])
+      new(url,
+          attributes['id'],
+          attributes['name'],
+          attributes['agentInfo'])
     end
 
     def initialize(url, id, name, agent_info)

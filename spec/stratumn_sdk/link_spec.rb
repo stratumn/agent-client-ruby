@@ -2,12 +2,13 @@ require 'spec_helper'
 require 'stratumn_sdk'
 
 describe StratumnSdk::Link, :vcr do
-
   let(:app) { StratumnSdk::Application.load('sdk-test') }
-  let(:link) { app.get_link('9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff') }
+  let(:link_hash) do
+    '9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff'
+  end
+  let(:link) { app.get_link(link_hash) }
 
   describe '.initialize' do
-
     it 'adds functions for agent methods' do
       new_link = link.addMessage('Hello, World!')
 
@@ -21,8 +22,11 @@ describe StratumnSdk::Link, :vcr do
   end
 
   describe '.load' do
-
-    let(:segment) { JSON.parse(File.read(File.expand_path('../../fixtures/segment.json', __FILE__))) }
+    let(:segment) do
+      JSON.parse(
+        File.read(File.expand_path('../../fixtures/segment.json', __FILE__))
+      )
+    end
 
     it 'loads the full link' do
       link = described_class.load(segment)
@@ -32,7 +36,6 @@ describe StratumnSdk::Link, :vcr do
   end
 
   describe '#previous' do
-
     it 'is null if first link' do
       expect(link.previous).to be_nil
     end
@@ -45,7 +48,6 @@ describe StratumnSdk::Link, :vcr do
   end
 
   describe '#get_branches' do
-
     it 'returns the branches' do
       branches = link.get_branches(['test'])
 
@@ -54,7 +56,6 @@ describe StratumnSdk::Link, :vcr do
   end
 
   describe '#load', vcr: { cassette_name: '_class_load' } do
-
     it 'loads the full link' do
       map = app.get_map('57277b34b25789323e1099fc')
 

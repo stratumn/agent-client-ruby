@@ -1,8 +1,9 @@
 require 'http'
 
 module StratumnSdk
+  ##
+  # Wrapper around HTTP.request that parses the response and raises on error
   module Request
-
     def get(*args)
       request(:get, *args)
     end
@@ -10,18 +11,21 @@ module StratumnSdk
     def post(*args)
       result = request(:post, *args)
 
-      raise result['meta']['errorMessage'] if result['meta'] && result['meta']['errorMessage']
+      if result['meta'] && result['meta']['errorMessage']
+        raise result['meta']['errorMessage']
+      end
 
       result
     end
 
     private
-      def request(verb, *args)
-        result = HTTP.request(verb, *args).parse
 
-        raise result['error'] if result.is_a?(Hash) && result['error']
+    def request(verb, *args)
+      result = HTTP.request(verb, *args).parse
 
-        result
-      end
+      raise result['error'] if result.is_a?(Hash) && result['error']
+
+      result
+    end
   end
 end

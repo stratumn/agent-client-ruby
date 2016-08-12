@@ -3,3 +3,6 @@ language: ruby
 rvm:
   - 2.3.0
   - 2.2
+script:
+  - bundle exec rake spec
+  - bundle exec rake rubocop
