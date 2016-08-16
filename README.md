@@ -56,7 +56,7 @@ application = StratumnSdk::Application.load('quickstart')
 link = application.create_map('My message map')
 ```
 
-#### StratumnSdk::get_link(hash)
+#### StratumnSdk::Application.get_link(hash)
 
 Returns an existing link.
 
@@ -66,7 +66,7 @@ link = application.get_link('aee5427')
 puts link.link_hash
 ```
 
-#### StratumnSdk::get_map(map_id, tags = [])
+#### StratumnSdk::Application.get_map(map_id, tags = [])
 
 Returns the links in a map, optionally filtered by tags.
 
@@ -75,7 +75,7 @@ application = StratumnSdk::Application.load('quickstart')
 links = application.get_map('aee5427', ['tag1', 'tag2'])
 ```
 
-#### StratumnSdk::get_branches(hash, tags = [])
+#### StratumnSdk::Application.get_branches(hash, tags = [])
 
 Returns he links whose previous hashes are the given hash, optionally filters by tags.
 
