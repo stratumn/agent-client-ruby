@@ -5,7 +5,7 @@ module StratumnSdk
     include Request
     include Helper
 
-    attr_accessor :application, :meta, :state, :link, :linkHash
+    attr_accessor :application, :meta, :state, :link, :link_hash
 
     def initialize(application, obj)
       self.application = application
@@ -13,7 +13,7 @@ module StratumnSdk
       self.link = obj['link']
       self.meta = link['meta']
       self.state = link['state']
-      self.linkHash = obj['meta']['linkHash']
+      self.link_hash = obj['meta']['linkHash']
 
       application.agent_info['functions'].each do |(method, _)|
         add_transition_method(method)
@@ -25,11 +25,11 @@ module StratumnSdk
     end
 
     def get_branches(tags)
-      application.get_branches(linkHash, tags)
+      application.get_branches(link_hash, tags)
     end
 
     def load
-      application.get_link(linkHash)
+      application.get_link(link_hash)
     end
 
     def self.load(segment)
@@ -47,7 +47,7 @@ module StratumnSdk
 
     def add_transition_method(method)
       define_singleton_method(method) do |*args|
-        url = "#{application.url}/links/#{linkHash}/#{method}"
+        url = "#{application.url}/links/#{link_hash}/#{method}"
 
         result = post(url, json: args)
 

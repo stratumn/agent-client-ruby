@@ -43,7 +43,7 @@ describe StratumnSdk::Link, :vcr do
     it 'returns the previous link if not first' do
       new_link = link.addMessage('Hello, World!')
 
-      expect(new_link.previous.linkHash).to eq(link.linkHash)
+      expect(new_link.previous.link_hash).to eq(link.link_hash)
     end
   end
 

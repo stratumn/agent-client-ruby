@@ -63,6 +63,7 @@ Returns an existing link.
 ```ruby
 application = StratumnSdk::Application.load('quickstart')
 link = application.get_link('aee5427')
+puts link.link_hash
 ```
 
 #### StratumnSdk::get_map(map_id, tags = [])
@@ -95,7 +96,7 @@ previous = link.previous
 
 #### StratumnSdk::Link#load
 
-Load a full link. Can be useful when you only have the meta data of links.
+Loads a full link. Can be useful when you only have the meta data of links.
 
 ```ruby
 application = StratumnSdk::Application.load('quickstart')
