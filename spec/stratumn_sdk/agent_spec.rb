@@ -33,7 +33,6 @@ describe StratumnSdk::Agent, :vcr do
   end
 
   describe '#find_segments' do
-
     context 'with no options' do
       it 'finds the segments' do
         2.times { agent.create_map('hi') }

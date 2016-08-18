@@ -4,7 +4,7 @@ require 'stratumn_sdk'
 describe StratumnSdk::Segment, :vcr do
   let(:app) { StratumnSdk::Agent.load('http://localhost:3333') }
   let(:segment) { app.get_segment(link_hash) }
-  let(:link_hash) {  app.create_map('blah').link_hash }
+  let(:link_hash) { app.create_map('blah').link_hash }
 
   describe '.initialize' do
     it 'adds functions for agent methods' do
