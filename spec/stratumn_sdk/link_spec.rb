@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'stratumn_sdk'
 
 describe StratumnSdk::Link, :vcr do
-  let(:app) { StratumnSdk::Application.load('sdk-test') }
+  let(:app) { StratumnSdk::Agent.load('sdk-test') }
   let(:link_hash) do
     '9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff'
   end

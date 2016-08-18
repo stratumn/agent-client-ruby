@@ -1,15 +1,15 @@
-# Stratumn SDK for Ruby
+# Stratumn SDK for Ruby [ALPHA - incompatible with production]
 
 [![build status](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)
 [![Gem Version](https://badge.fury.io/rb/stratumn_sdk.svg)](https://badge.fury.io/rb/stratumn_sdk)
 
-Interact with your Stratumn agent from your ruby application
+Interact with your Stratumn agent from your ruby agent
 
 code  :: https://github.com/stratumn/stratumn-sdk-ruby
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your agent's Gemfile:
 
 ```ruby
 gem 'stratumn-sdk'
@@ -26,9 +26,9 @@ Or install it yourself as:
 ## Quickstart
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
+agent = StratumnSdk::Agent.load('quickstart')
 
-link = application.create_map('My message map')
+link = agent.create_map('My message map')
 
 link = link.addMessage('Hello, World')
 
@@ -38,50 +38,50 @@ puts link.state
  
 ## Reference
  
-#### StratumnSdk::Application.load(name)
+#### StratumnSdk::Agent.load(name)
  
-Returns an instance of StratumnSdk::Application.
+Returns an instance of StratumnSdk::Agent.
  
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-puts application.id
+agent = StratumnSdk::Agent.load('quickstart')
+puts agent.id
 ```
 
-#### StratumnSdk::Application#create_map(*args)
+#### StratumnSdk::Agent#create_map(*args)
 
-Creates a new map in the application.
+Creates a new map in the agent.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-link = application.create_map('My message map')
+agent = StratumnSdk::Agent.load('quickstart')
+link = agent.create_map('My message map')
 ```
 
-#### StratumnSdk::Application.get_link(hash)
+#### StratumnSdk::Agent.get_link(hash)
 
 Returns an existing link.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-link = application.get_link('aee5427')
+agent = StratumnSdk::Agent.load('quickstart')
+link = agent.get_link('aee5427')
 puts link.link_hash
 ```
 
-#### StratumnSdk::Application.get_map(map_id, tags = [])
+#### StratumnSdk::Agent.get_map(map_id, tags = [])
 
 Returns the links in a map, optionally filtered by tags.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-links = application.get_map('aee5427', ['tag1', 'tag2'])
+agent = StratumnSdk::Agent.load('quickstart')
+links = agent.get_map('aee5427', ['tag1', 'tag2'])
 ```
 
-#### StratumnSdk::Application.get_branches(hash, tags = [])
+#### StratumnSdk::Agent.get_branches(hash, tags = [])
 
 Returns he links whose previous hashes are the given hash, optionally filters by tags.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-links = application.get_branches('aee5427', ['tag1', 'tag2'])
+agent = StratumnSdk::Agent.load('quickstart')
+links = agent.get_branches('aee5427', ['tag1', 'tag2'])
 ```
 
 #### StratumnSdk::Link#previous
@@ -89,8 +89,8 @@ links = application.get_branches('aee5427', ['tag1', 'tag2'])
 Returns the previous link of a link (its parent).
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-link = application.get_link('aee5427')
+agent = StratumnSdk::Agent.load('quickstart')
+link = agent.get_link('aee5427')
 previous = link.previous
 ```
 
@@ -99,8 +99,8 @@ previous = link.previous
 Loads a full link. Can be useful when you only have the meta data of links.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-links = application.get_branches('aee5427')
+agent = StratumnSdk::Agent.load('quickstart')
+links = agent.get_branches('aee5427')
 
 links.map { |link| link.load }
 ```
@@ -110,8 +110,8 @@ links.map { |link| link.load }
 Returns the links whose previous hashes are the hash of the link, optionally filters by tags.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-link = application.get_link('aee5427')
+agent = StratumnSdk::Agent.load('quickstart')
+link = agent.get_link('aee5427')
 link.get_branches(['tag1'])
 ```
 
@@ -120,8 +120,8 @@ link.get_branches(['tag1'])
 Executes a transition function and returns the new link.
 
 ```ruby
-application = StratumnSdk::Application.load('quickstart')
-link = application.get_link('aee5427')
+agent = StratumnSdk::Agent.load('quickstart')
+link = agent.get_link('aee5427')
 new_link = link.addMessage('Hello, World!')
 
 # underscore version is also available

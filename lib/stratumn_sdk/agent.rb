@@ -1,7 +1,7 @@
 module StratumnSdk
   ##
   # Represents a Stratumn application
-  class Application
+  class Agent
     include Request
     extend Request
 
