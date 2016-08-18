@@ -5,24 +5,20 @@ module StratumnSdk
     include Request
     extend Request
 
-    attr_accessor :url, :id, :name, :agent_info
+    attr_accessor :url, :agent_info, :store_info
 
-    def self.load(application_name, application_location = nil)
-      url = application_location ||
-            StratumnSdk.config[:application_url].gsub('%s', application_name)
+    def self.load(url)
       attributes = get(url)
 
       new(url,
-          attributes['id'],
-          attributes['name'],
-          attributes['agentInfo'])
+          attributes['agentInfo'],
+          attributes['storeInfo'])
     end
 
-    def initialize(url, id, name, agent_info)
+    def initialize(url, agent_info, store_info)
       self.url = url
-      self.id = id
-      self.name = name
       self.agent_info = agent_info
+      self.store_info = store_info
     end
 
     def create_map(*args)
@@ -31,30 +27,22 @@ module StratumnSdk
       Segment.new(self, result)
     end
 
+    def get_map_ids(options = {})
+      get(url + '/maps?' + URI.encode_www_form(options))
+    end
+
+    def find_segments(options = {})
+      result = get(url + '/segments?' + URI.encode_www_form(options))
+
+      result.map do |link|
+        Segment.new(self, link)
+      end
+    end
+
     def get_segment(link_hash)
       result = get(url + '/segments/' + link_hash)
 
       Segment.new(self, result)
-    end
-
-    def get_map(map_id, tags = [])
-      query = tags.empty? ? '' : "?tags=#{tags.join('&tags=')}"
-
-      result = get(url + '/maps/' + map_id + query)
-
-      result.map do |link|
-        Segment.new(self, link)
-      end
-    end
-
-    def get_branches(link_hash, tags = [])
-      query = tags.empty? ? '' : "?tags=#{tags.join('&tags=')}"
-
-      result = get(url + '/branches/' + link_hash + query)
-
-      result.map do |link|
-        Segment.new(self, link)
-      end
     end
   end
 end

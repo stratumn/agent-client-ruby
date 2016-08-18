@@ -1,20 +1,15 @@
 {
   "link": {
+    "state": {
+      "value": "one"
+    },
     "meta": {
-      "mapId": "57277b34b25789323e1099fc",
-      "agentHash": "23ff56ec76ebfeeb0d3e9841af9504c96c843dead61f9ebfa7b4db7940e5b81c",
-      "stateHash": "a43b6fde5e74cf326f54764acc4578d7f13427ca6e70855ee8f03bea243a7f58",
-      "prevLinkHash": null,
-      "action": "init",
-      "arguments": [
-        "test"
-      ]
+      "mapId": "one",
+      "priority": 1
     }
   },
   "meta": {
-    "linkHash": "14d8721671f905bb4abb504c09d71804aa2bdcf65eaa19d7aa2badd9913e9bcc",
-    "application": "sdk-test",
-    "applicationLocation": "https://sdk-test.stratumn.net",
-    "linkLocation": "https://sdk-test.stratumn.net/links/14d8721671f905bb4abb504c09d71804aa2bdcf65eaa19d7aa2badd9913e9bcc"
+    "linkHash": "segment1",
+    "agentUrl": "http://localhost:3333"
   }
 }

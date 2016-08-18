@@ -15,7 +15,7 @@ module StratumnSdk
       self.state = link['state']
       self.link_hash = obj['meta']['linkHash']
 
-      agent.agent_info['functions'].each do |(method, _)|
+      agent.agent_info['actions'].each do |(method, _)|
         add_transition_method(method)
       end
     end
@@ -24,23 +24,18 @@ module StratumnSdk
       agent.get_segment(meta['prevLinkHash']) if meta['prevLinkHash']
     end
 
-    def get_branches(tags)
-      agent.get_branches(link_hash, tags)
+    def find_segments(options = {})
+      agent.find_segments(options)
     end
 
     def load
       agent.get_segment(link_hash)
     end
 
-    def self.load(segment)
-      meta = segment['meta']
+    def self.from(segment)
+      agent = Agent.load(segment['meta']['agentUrl'])
 
-      agent = Agent.load(
-        meta['agentUrl'],
-        meta['applicationLocation']
-      )
-
-      agent.get_segment(meta['linkHash'])
+      new(agent, segment)
     end
 
     private
