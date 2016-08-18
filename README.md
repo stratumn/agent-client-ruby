@@ -28,12 +28,12 @@ Or install it yourself as:
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
 
-link = agent.create_map('My message map')
+segment = agent.create_map('My message map')
 
-link = link.addMessage('Hello, World')
+segment = segment.addMessage('Hello, World')
 
-puts link.meta
-puts link.state
+puts segment.meta
+puts segment.state
 ```
  
 ## Reference
@@ -53,22 +53,22 @@ Creates a new map in the agent.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-link = agent.create_map('My message map')
+segment = agent.create_map('My message map')
 ```
 
 #### StratumnSdk::Agent.get_link(hash)
 
-Returns an existing link.
+Returns an existing segment.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-link = agent.get_link('aee5427')
-puts link.link_hash
+segment = agent.get_link('aee5427')
+puts segment.link_hash
 ```
 
 #### StratumnSdk::Agent.get_map(map_id, tags = [])
 
-Returns the links in a map, optionally filtered by tags.
+Returns the segments in a map, optionally filtered by tags.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
@@ -84,48 +84,48 @@ agent = StratumnSdk::Agent.load('quickstart')
 links = agent.get_branches('aee5427', ['tag1', 'tag2'])
 ```
 
-#### StratumnSdk::Link#previous
+#### StratumnSdk::Segment#previous
 
-Returns the previous link of a link (its parent).
+Returns the previous segment of a segment (its parent).
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-link = agent.get_link('aee5427')
-previous = link.previous
+segment = agent.get_link('aee5427')
+previous = segment.previous
 ```
 
-#### StratumnSdk::Link#load
+#### StratumnSdk::Segment#load
 
-Loads a full link. Can be useful when you only have the meta data of links.
+Loads a full segment. Can be useful when you only have the meta data of links.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-links = agent.get_branches('aee5427')
+segments = agent.get_branches('aee5427')
 
-links.map { |link| link.load }
+segments.map { |segment| segment.load }
 ```
 
-#### StratumnSdk::Link#get_branches(tags)
+#### StratumnSdk::Segment#get_branches(tags)
 
-Returns the links whose previous hashes are the hash of the link, optionally filters by tags.
+Returns the segments whose previous hashes are the hash of the segment, optionally filters by tags.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-link = agent.get_link('aee5427')
-link.get_branches(['tag1'])
+segment = agent.get_link('aee5427')
+segment.get_branches(['tag1'])
 ```
 
-#### StratumnSdk::Link#transition_function(*args)
+#### StratumnSdk::Segment#transition_function(*args)
 
-Executes a transition function and returns the new link.
+Executes a transition function and returns the new segment.
 
 ```ruby
 agent = StratumnSdk::Agent.load('quickstart')
-link = agent.get_link('aee5427')
-new_link = link.addMessage('Hello, World!')
+segment = agent.get_link('aee5427')
+new_segment = segment.addMessage('Hello, World!')
 
 # underscore version is also available
-new_link = link.add_message('Hello, World!')
+new_segment = segment.add_message('Hello, World!')
 ```
 
 ## Development

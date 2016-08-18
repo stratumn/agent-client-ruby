@@ -2,7 +2,7 @@ require 'stratumn_sdk/version'
 require 'stratumn_sdk/request'
 require 'stratumn_sdk/helper'
 require 'stratumn_sdk/agent'
-require 'stratumn_sdk/link'
+require 'stratumn_sdk/segment'
 
 require 'yaml'
 

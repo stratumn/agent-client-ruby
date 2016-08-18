@@ -23,17 +23,17 @@ describe StratumnSdk::Agent, :vcr do
 
   describe '#create_map' do
     it 'creates a new map' do
-      link = app.create_map('Test')
+      segment = app.create_map('Test')
 
-      expect(link.state['title']).to eq('Test')
+      expect(segment.state['title']).to eq('Test')
     end
   end
 
-  describe '#get_link' do
-    it 'gets a link' do
-      link = app.get_link('9f0dec64d62e946ff8')
+  describe '#get_segment' do
+    it 'gets a segment' do
+      segment = app.get_segment('9f0dec64d62e946ff8')
 
-      expect(link.state['title']).to eq('test')
+      expect(segment.state['title']).to eq('test')
     end
   end
 
@@ -50,11 +50,11 @@ describe StratumnSdk::Agent, :vcr do
       expect(map.length).to eq(1)
     end
 
-    it 'returns loadable links' do
+    it 'returns loadable segments' do
       map = app.get_map('57277b34b25789323e1099fc')
 
-      map.each do |link|
-        expect(link.methods).to include(:load)
+      map.each do |segment|
+        expect(segment.methods).to include(:load)
       end
     end
   end
@@ -72,11 +72,11 @@ describe StratumnSdk::Agent, :vcr do
       expect(branches.length).to eq(1)
     end
 
-    it 'returns loadable links' do
+    it 'returns loadable segments' do
       branches = app.get_branches('9f0dec64d62e946ff8')
 
-      branches.each do |link|
-        expect(link.methods).to include(:load)
+      branches.each do |segment|
+        expect(segment.methods).to include(:load)
       end
     end
   end

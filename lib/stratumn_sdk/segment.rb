@@ -1,7 +1,7 @@
 module StratumnSdk
   ##
   # Represents a link in a Stratumn application
-  class Link
+  class Segment
     include Request
     include Helper
 
@@ -21,7 +21,7 @@ module StratumnSdk
     end
 
     def previous
-      agent.get_link(meta['prevLinkHash']) if meta['prevLinkHash']
+      agent.get_segment(meta['prevLinkHash']) if meta['prevLinkHash']
     end
 
     def get_branches(tags)
@@ -29,7 +29,7 @@ module StratumnSdk
     end
 
     def load
-      agent.get_link(link_hash)
+      agent.get_segment(link_hash)
     end
 
     def self.load(segment)
@@ -40,14 +40,14 @@ module StratumnSdk
         meta['applicationLocation']
       )
 
-      agent.get_link(meta['linkHash'])
+      agent.get_segment(meta['linkHash'])
     end
 
     private
 
     def add_transition_method(method)
       define_singleton_method(method) do |*args|
-        url = "#{agent.url}/links/#{link_hash}/#{method}"
+        url = "#{agent.url}/segments/#{link_hash}/#{method}"
 
         result = post(url, json: args)
 

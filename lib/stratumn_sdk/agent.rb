@@ -26,15 +26,15 @@ module StratumnSdk
     end
 
     def create_map(*args)
-      result = post(url + '/maps', json: args)
+      result = post(url + '/segments', json: args)
 
-      Link.new(self, result)
+      Segment.new(self, result)
     end
 
-    def get_link(link_hash)
-      result = get(url + '/links/' + link_hash)
+    def get_segment(link_hash)
+      result = get(url + '/segments/' + link_hash)
 
-      Link.new(self, result)
+      Segment.new(self, result)
     end
 
     def get_map(map_id, tags = [])
@@ -43,7 +43,7 @@ module StratumnSdk
       result = get(url + '/maps/' + map_id + query)
 
       result.map do |link|
-        Link.new(self, link)
+        Segment.new(self, link)
       end
     end
 
@@ -53,7 +53,7 @@ module StratumnSdk
       result = get(url + '/branches/' + link_hash + query)
 
       result.map do |link|
-        Link.new(self, link)
+        Segment.new(self, link)
       end
     end
   end
