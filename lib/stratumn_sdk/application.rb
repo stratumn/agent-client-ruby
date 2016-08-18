@@ -28,8 +28,6 @@ module StratumnSdk
     def create_map(*args)
       result = post(url + '/maps', json: args)
 
-      raise result['meta']['errorMessage'] if result['meta']['errorMessage']
-
       Link.new(self, result)
     end
 
