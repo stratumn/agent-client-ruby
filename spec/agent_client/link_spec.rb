@@ -5,10 +5,10 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 require 'spec_helper'
-require 'stratumn_sdk'
+require 'agent_client'
 
-describe StratumnSdk::Link, :vcr do
-  let(:app) { StratumnSdk::Application.load('sdk-test') }
+describe AgentClient::Link, :vcr do
+  let(:app) { AgentClient::Application.load('sdk-test') }
   let(:link_hash) do
     '9e16cda1745402d887ba89ccad3dc4bf9aafa86427aab2ca19bf42beb9d108ff'
   end

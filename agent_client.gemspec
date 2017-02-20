@@ -7,11 +7,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'stratumn_sdk/version'
+require 'agent_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'stratumn_sdk'
-  spec.version       = StratumnSdk::VERSION
+  spec.name          = 'stratumn_agent_client'
+  spec.version       = AgentClient::VERSION
   spec.authors       = ['Stratumn Team']
   spec.email         = ['stratumn@gmail.com']
 

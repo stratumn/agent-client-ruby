@@ -4,7 +4,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-module StratumnSdk
+module AgentClient
   ##
   # Represents a Stratumn application
   class Application
@@ -15,7 +15,7 @@ module StratumnSdk
 
     def self.load(application_name, application_location = nil)
       url = application_location ||
-            StratumnSdk.config[:application_url].gsub('%s', application_name)
+            AgentClient.config[:application_url].gsub('%s', application_name)
       attributes = get(url)
 
       new(url,

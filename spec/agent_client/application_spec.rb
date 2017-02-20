@@ -6,12 +6,12 @@
 
 require 'spec_helper'
 
-require 'stratumn_sdk'
+require 'agent_client'
 
-describe StratumnSdk::Application, :vcr do
+describe AgentClient::Application, :vcr do
   describe '.get' do
     it 'loads an existing application' do
-      app = StratumnSdk::Application.load('sdk-test')
+      app = AgentClient::Application.load('sdk-test')
 
       expect(app.name).to eq('sdk-test')
       expect(app.id).to eq('572778542311def814311315')
@@ -19,13 +19,13 @@ describe StratumnSdk::Application, :vcr do
     end
 
     it 'raises for application not found' do
-      expect { StratumnSdk::Application.get('not-found') }.to(
+      expect { AgentClient::Application.get('not-found') }.to(
         raise_exception(StandardError)
       )
     end
   end
 
-  let(:app) { StratumnSdk::Application.load('sdk-test') }
+  let(:app) { AgentClient::Application.load('sdk-test') }
 
   describe '#create_map' do
     it 'creates a new map' do
