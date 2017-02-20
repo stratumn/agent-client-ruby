@@ -1,18 +1,18 @@
-# Stratumn SDK for Ruby [ALPHA - incompatible with production]
+# Agent client for Ruby [ALPHA - incompatible with production]
 
-[![build status](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)](https://travis-ci.org/stratumn/stratumn-sdk-ruby.svg?branch=master)
-[![Gem Version](https://badge.fury.io/rb/stratumn_sdk.svg)](https://badge.fury.io/rb/stratumn_sdk)
+[![build status](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)
+[![Gem Version](https://badge.fury.io/rb/agent_client.svg)](https://badge.fury.io/rb/stratumn_agent_client)
 
 Interact with your Stratumn agent from your ruby agent
 
-code  :: https://github.com/stratumn/stratumn-sdk-ruby
+code  :: https://github.com/stratumn/agent-client-ruby
 
 ## Installation
 
 Add this line to your agent's Gemfile:
 
 ```ruby
-gem 'stratumn-sdk'
+gem 'agent-client'
 ```
 
 And then execute:
@@ -21,12 +21,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install stratumn-sdk
+    $ gem install agent-client
 
 ## Quickstart
 
 ```ruby
-agent = StratumnSdk::Agent.load('quickstart')
+agent = AgentClient::Agent.load('quickstart')
 
 segment = agent.create_map('My message map')
 
@@ -35,43 +35,42 @@ segment = segment.add_essage('Hello, World')
 puts segment.meta
 puts segment.state
 ```
- 
+
 ## Reference
- 
-#### StratumnSdk::Agent.load(url)
- 
-Returns an instance of StratumnSdk::Agent.
- 
+
+#### AgentClient::Agent.load(url)
+
+Returns an instance of AgentClient::Agent.
+
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 puts agent.agent_info
 ```
 
-#### StratumnSdk::Agent#create_map(*args)
+#### AgentClient::Agent#create_map(*args)
 
 Creates a new map in the agent.
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segment = agent.create_map('My message map')
 ```
 
-#### StratumnSdk::Agent.get_segment(hash)
+#### AgentClient::Agent.get_segment(hash)
 
 Returns an existing segment.
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segment = agent.get_segment('aee5427')
 puts segment.link_hash
 ```
 
-#### StratumnSdk::Agent.find_segments(options = {})
+#### AgentClient::Agent.find_segments(options = {})
 
 Returns existing segments.
 
 Available options are:
-
 - `offset`: offset of first returned segments
 - `limit`: limit number of returned segments
 - `mapId`: return segments with specified map ID
@@ -79,47 +78,47 @@ Available options are:
 - `tags`: return segments that contains all the tags (array)
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segments = agent.find_segments(tags: ['tag1', 'tag2'])
 ```
 
-#### StratumnSdk::Segment.from
+#### AgentClient::Segment.from
 
 Returns segment from a given raw object.
 
 ```ruby
-segment = StratumnSdk::Agent.from(raw_segment)
+segment = AgentClient::Agent.from(raw_segment)
 puts segment.agent
 puts segment.link_hash
 ```
 
-#### StratumnSdk::Segment#previous
+#### AgentClient::Segment#previous
 
 Returns the previous segment of a segment (its parent).
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segment = agent.get_segment('aee5427')
 previous = segment.previous
 ```
 
-#### StratumnSdk::Segment#load
+#### AgentClient::Segment#load
 
 Loads a full segment. Can be useful when you only have the meta data of links.
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segments = agent.find_segments
 
 segments.map { |segment| segment.load }
 ```
 
-#### StratumnSdk::Segment#transition_function(*args)
+#### AgentClient::Segment#transition_function(*args)
 
 Executes a transition function and returns the new segment.
 
 ```ruby
-agent = StratumnSdk::Agent.load('http://localhost:3000')
+agent = AgentClient::Agent.load('http://localhost:3000')
 segment = agent.get_segment('aee5427')
 new_segment = segment.addMessage('Hello, World!')
 
@@ -143,29 +142,3 @@ $ cd spec/agent
 $ npm install
 $ node index.js
 ```
-
-
-## License:
-
-(The MIT License)
-
-Copyright (c) 2016 FIX
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

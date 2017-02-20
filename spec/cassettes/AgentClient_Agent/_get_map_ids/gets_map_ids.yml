@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3333/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '220'
+      Etag:
+      - W/"dc-Ih/pGLgpvks+3F32jvpYbw"
+      Date:
+      - Mon, 20 Feb 2017 15:54:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"agentInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}}},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:54:26 GMT
+- request:
+    method: post
+    uri: http://localhost:3333/segments
+    body:
+      encoding: UTF-8
+      string: '["hi"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '521'
+      Etag:
+      - W/"209-7MeQ0uej8q36fNq5iWITcA"
+      Date:
+      - Mon, 20 Feb 2017 15:54:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"hi","messages":[],"updatedAt":1487606066272},"meta":{"mapId":"0c8d17ce-8a8a-49f5-824a-4e1c4577f547","priority":0,"stateHash":"1abffab4eb7e248e9f342b5f31a328de8e9839c8cc041ca50f378e1b1c002b7b","action":"init","arguments":["hi"]}},"meta":{"linkHash":"99fe65c58bdfae088784c465fdce8c6b1716db2a5b32f3ac98430810f9279509","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/99fe65c58bdfae088784c465fdce8c6b1716db2a5b32f3ac98430810f9279509"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:54:26 GMT
+- request:
+    method: post
+    uri: http://localhost:3333/segments
+    body:
+      encoding: UTF-8
+      string: '["hi"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '521'
+      Etag:
+      - W/"209-2FwtNmuG+3ZbbKysyHUpAg"
+      Date:
+      - Mon, 20 Feb 2017 15:54:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"hi","messages":[],"updatedAt":1487606066277},"meta":{"mapId":"af802da0-6e93-4c7b-9c41-110982389741","priority":0,"stateHash":"2447e85232206352a7a2a42984959e286b617b1354bef397af8f25c10d6f4965","action":"init","arguments":["hi"]}},"meta":{"linkHash":"760c52e2f523c071d9101de5539730c466772c93931d7e61c6429ff483e4a592","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/760c52e2f523c071d9101de5539730c466772c93931d7e61c6429ff483e4a592"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:54:26 GMT
+- request:
+    method: post
+    uri: http://localhost:3333/segments
+    body:
+      encoding: UTF-8
+      string: '["hi"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '521'
+      Etag:
+      - W/"209-lp8mPU8NpfT7bnKU4ZPADQ"
+      Date:
+      - Mon, 20 Feb 2017 15:54:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"hi","messages":[],"updatedAt":1487606066282},"meta":{"mapId":"328ff587-8e9f-4619-ad2f-99ae3bcca08a","priority":0,"stateHash":"66e615e86ff9d9f30ed456db4c25b277db17b164f9fa383465bcd810dacaf8c7","action":"init","arguments":["hi"]}},"meta":{"linkHash":"f615bb4b6981d2406f4b2aea794d304fb817b708d55466fe9601a34d11a13c87","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/f615bb4b6981d2406f4b2aea794d304fb817b708d55466fe9601a34d11a13c87"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:54:26 GMT
+- request:
+    method: get
+    uri: http://localhost:3333/maps
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '118'
+      Etag:
+      - W/"76-FfzT0tr7l9oK5qPhxiF8ug"
+      Date:
+      - Mon, 20 Feb 2017 15:54:26 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '["0c8d17ce-8a8a-49f5-824a-4e1c4577f547","af802da0-6e93-4c7b-9c41-110982389741","328ff587-8e9f-4619-ad2f-99ae3bcca08a"]'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:54:26 GMT
+recorded_with: VCR 3.0.3

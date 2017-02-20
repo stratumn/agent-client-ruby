@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3333/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '220'
+      Etag:
+      - W/"dc-Ih/pGLgpvks+3F32jvpYbw"
+      Date:
+      - Mon, 20 Feb 2017 15:50:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"agentInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}}},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+- request:
+    method: post
+    uri: http://localhost:3333/segments
+    body:
+      encoding: UTF-8
+      string: '["blah"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '525'
+      Etag:
+      - W/"20d-a0vfvIXK47kYaPSzJy9ejA"
+      Date:
+      - Mon, 20 Feb 2017 15:50:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1487605843358},"meta":{"mapId":"32cf8925-ca15-4274-97f7-498d01846b94","priority":0,"stateHash":"99d5e4aa731454dde3a6fcfac36099f1a8e7eaf8e25b37b8549a38be85de50f0","action":"init","arguments":["blah"]}},"meta":{"linkHash":"6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+- request:
+    method: get
+    uri: http://localhost:3333/segments/6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '525'
+      Etag:
+      - W/"20d-a0vfvIXK47kYaPSzJy9ejA"
+      Date:
+      - Mon, 20 Feb 2017 15:50:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1487605843358},"meta":{"mapId":"32cf8925-ca15-4274-97f7-498d01846b94","priority":0,"stateHash":"99d5e4aa731454dde3a6fcfac36099f1a8e7eaf8e25b37b8549a38be85de50f0","action":"init","arguments":["blah"]}},"meta":{"linkHash":"6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+- request:
+    method: get
+    uri: http://localhost:3333/segments/6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '525'
+      Etag:
+      - W/"20d-a0vfvIXK47kYaPSzJy9ejA"
+      Date:
+      - Mon, 20 Feb 2017 15:50:43 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1487605843358},"meta":{"mapId":"32cf8925-ca15-4274-97f7-498d01846b94","priority":0,"stateHash":"99d5e4aa731454dde3a6fcfac36099f1a8e7eaf8e25b37b8549a38be85de50f0","action":"init","arguments":["blah"]}},"meta":{"linkHash":"6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/6cd6cf1bb540e6ff3a257d254a2c66dcf9a0ec167bb28cc65e07186e0393e73a"}}'
+    http_version: 
+  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+recorded_with: VCR 3.0.3
