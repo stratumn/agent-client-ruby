@@ -1,7 +1,7 @@
 # Agent client for Ruby
 
 [![build status](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)
-[![Gem Version](https://badge.fury.io/rb/agent_client.svg)](https://badge.fury.io/rb/agent_client)
+[![Gem Version](https://badge.fury.io/rb/stratumn_agent_client.svg)](https://badge.fury.io/rb/stratumn_agent_client)
 
 Interact with your Stratumn agent from your ruby application
 
