@@ -4,17 +4,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-require 'stratumn_sdk/version'
-require 'stratumn_sdk/request'
-require 'stratumn_sdk/helper'
-require 'stratumn_sdk/application'
-require 'stratumn_sdk/link'
+require 'agent_client/version'
+require 'agent_client/request'
+require 'agent_client/helper'
+require 'agent_client/application'
+require 'agent_client/link'
 
 require 'yaml'
 
 ##
 # Allows interacting with your Stratumn agent from your ruby app
-module StratumnSdk
+module AgentClient
   # Configuration defaults
   @config = {
     base_url: 'https://stratumn.rocks',

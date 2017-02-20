@@ -6,7 +6,7 @@
 
 require 'http'
 
-module StratumnSdk
+module AgentClient
   ##
   # Wrapper around HTTP.request that parses the response and raises on error
   module Request

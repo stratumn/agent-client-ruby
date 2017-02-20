@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stratumn_sdk (0.2.0)
+    stratumn_agent_client (0.2.0)
       http (~> 2.0)
 
 GEM
@@ -68,9 +68,9 @@ DEPENDENCIES
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.42)
-  stratumn_sdk!
+  stratumn_agent_client!
   vcr (~> 3.0)
   webmock (~> 2.1)
 
 BUNDLED WITH
-   1.12.5
+   1.13.6

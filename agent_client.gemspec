@@ -7,16 +7,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'stratumn_sdk/version'
+require 'agent_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'stratumn_sdk'
-  spec.version       = StratumnSdk::VERSION
+  spec.name          = 'stratumn_agent_client'
+  spec.version       = AgentClient::VERSION
   spec.authors       = ['Stratumn Team']
   spec.email         = ['stratumn@gmail.com']
 
   spec.summary       = 'Interact with your Stratumn agent from your ruby app'
-  spec.homepage      = 'https://github.com/stratumn/stratumn-sdk-ruby'
+  spec.homepage      = 'https://github.com/stratumn/agent-client-ruby'
   spec.license       = 'MPL-2.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
