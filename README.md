@@ -1,7 +1,7 @@
 # Agent client for Ruby [ALPHA - incompatible with production]
 
 [![build status](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)
-[![Gem Version](https://badge.fury.io/rb/agent_client.svg)](https://badge.fury.io/rb/stratumn_agent_client)
+[![Gem Version](https://badge.fury.io/rb/stratumn_agent_client.svg)](https://badge.fury.io/rb/stratumn_agent_client)
 
 Interact with your Stratumn agent from your ruby agent
 
@@ -12,7 +12,7 @@ code  :: https://github.com/stratumn/agent-client-ruby
 Add this line to your agent's Gemfile:
 
 ```ruby
-gem 'agent-client'
+gem 'stratumn_agent_client'
 ```
 
 And then execute:
@@ -21,12 +21,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install agent-client
+    $ gem install stratumn_agent_client
 
 ## Quickstart
 
 ```ruby
-agent = AgentClient::Agent.load('quickstart')
+agent = AgentClient::Agent.load('http://localhost:3000')
 
 segment = agent.create_map('My message map')
 
