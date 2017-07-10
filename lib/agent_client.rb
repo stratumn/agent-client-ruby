@@ -41,7 +41,7 @@ module AgentClient
   # Configure through yaml file
   def self.configure_with(path_to_yaml_file)
     begin
-      config = YAML.load(IO.read(path_to_yaml_file))
+      config = YAML.safe_load(IO.read(path_to_yaml_file))
     rescue Errno::ENOENT
       puts 'YAML configuration file couldn\'t be found. Using defaults.'
       return
