@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stratumn_agent_client (1.0.0)
+    stratumn_agent_client (1.0.1)
       http (~> 2.0)
 
 GEM

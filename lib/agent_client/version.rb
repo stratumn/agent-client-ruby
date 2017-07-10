@@ -13,5 +13,5 @@
 # limitations under the License.
 
 module AgentClient
-  VERSION = '1.0.0'.freeze
+  VERSION = '1.0.1'.freeze
 end
