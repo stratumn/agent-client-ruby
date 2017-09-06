@@ -28,9 +28,13 @@ Or install it yourself as:
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
 
-segment = agent.create_map('My message map')
+raise 'No process detected in Agent' if agent.processes.empty?
 
-segment = segment.add_essage('Hello, World')
+process = agent.processes.first[1]
+
+segment = process.create_map('My message map')
+
+segment = segment.add_message('Hello, World', 'POTA')
 
 puts segment.meta
 puts segment.state
@@ -40,20 +44,21 @@ puts segment.state
 
 #### AgentClient::Agent.load(url)
 
-Returns an instance of AgentClient::Agent.
+Returns an instance of AgentClient::Agent containing several processes
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-puts agent.agent_info
+puts agent.processes.keys
 ```
 
-#### AgentClient::Agent#create_map(*args)
+#### AgentClient::Process#create_map(*args)
 
 Creates a new map in the agent.
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segment = agent.create_map('My message map')
+process = agent.processes.first[1]
+segment = process.create_map('My message map')
 ```
 
 #### AgentClient::Agent.get_segment(hash)
@@ -62,7 +67,8 @@ Returns an existing segment.
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segment = agent.get_segment('aee5427')
+process = agent.processes.first[1]
+segment = process.get_segment('aee5427')
 puts segment.link_hash
 ```
 
@@ -73,13 +79,15 @@ Returns existing segments.
 Available options are:
 - `offset`: offset of first returned segments
 - `limit`: limit number of returned segments
-- `mapId`: return segments with specified map ID
+- `mapIds`: return segments with one of the specified map IDs
 - `prevLinkHash`: return segments with specified previous link hash
 - `tags`: return segments that contains all the tags (array)
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segments = agent.find_segments(tags: ['tag1', 'tag2'])
+process = agent.processes.first[1]
+segments = process.find_segments(tags: ['tag1', 'tag2'])
+segments = process.find_segments(limit: 10)
 ```
 
 #### AgentClient::Segment.from
@@ -87,6 +95,7 @@ segments = agent.find_segments(tags: ['tag1', 'tag2'])
 Returns segment from a given raw object.
 
 ```ruby
+######## FIXME
 segment = AgentClient::Agent.from(raw_segment)
 puts segment.agent
 puts segment.link_hash
@@ -98,7 +107,8 @@ Returns the previous segment of a segment (its parent).
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segment = agent.get_segment('aee5427')
+process = agent.processes.first[1]
+segment = process.get_segment('aee5427')
 previous = segment.previous
 ```
 
@@ -108,7 +118,8 @@ Loads a full segment. Can be useful when you only have the meta data of links.
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segments = agent.find_segments
+process = agent.processes.first[1]
+segments = process.find_segments
 
 segments.map { |segment| segment.load }
 ```
@@ -119,7 +130,8 @@ Executes a transition function and returns the new segment.
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
-segment = agent.get_segment('aee5427')
+process = agent.processes.first[1]
+segment = process.get_segment('aee5427')
 new_segment = segment.addMessage('Hello, World!')
 
 # underscore version is also available

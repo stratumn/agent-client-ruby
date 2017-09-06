@@ -12,7 +12,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.2.2
   response:
     status:
       code: 200
@@ -21,22 +21,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '220'
+      - '802'
       Etag:
-      - W/"dc-Ih/pGLgpvks+3F32jvpYbw"
+      - W/"322-R0wTGXHMIYBsS0HQQAQ6jzNLH1E"
       Date:
-      - Mon, 20 Feb 2017 15:50:43 GMT
+      - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"agentInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}}},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
-        memory store","version":"0.1.0"}}}'
+      string: '{"processes":{"first_process":{"name":"first_process","processInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}},"pluginsInfo":[{"name":"T","description":"D"}]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}},"second_process":{"name":"second_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}},"third_process":{"name":"third_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}}}}'
     http_version: 
-  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 - request:
     method: post
-    uri: http://localhost:3333/segments
+    uri: http://localhost:3333/first_process/segments
     body:
       encoding: UTF-8
       string: '["blah"]'
@@ -48,7 +50,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.2.2
   response:
     status:
       code: 200
@@ -57,21 +59,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '525'
+      - '289'
       Etag:
-      - W/"20d-ObJe1wEbAVaHwh8QDbOPSA"
+      - W/"121-qF97ehaFRyqwHcCM88JBwrOmekg"
       Date:
-      - Mon, 20 Feb 2017 15:50:43 GMT
+      - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1487605843231},"meta":{"mapId":"ac39a5ec-6c89-4882-b551-f80d7da275c7","priority":0,"stateHash":"6128deac63daf17625e7537d967759c17be12ee734f905d0ebe21ef8365bdf2d","action":"init","arguments":["blah"]}},"meta":{"linkHash":"16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96"}}'
+      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1504705163742},"meta":{"mapId":"d9b33b62-f551-46f4-aa84-8ade97f3921a","priority":0,"process":"first_process"}},"meta":{"linkHash":"1ff5210be4dee695879ba3726aa752602ba6a65257a017767a6920136f576ccb","evidence":{"state":"DISABLED"}}}'
     http_version: 
-  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 - request:
     method: get
-    uri: http://localhost:3333/segments/16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96
+    uri: http://localhost:3333/first_process/segments/1ff5210be4dee695879ba3726aa752602ba6a65257a017767a6920136f576ccb
     body:
       encoding: US-ASCII
       string: ''
@@ -81,7 +83,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.2.2
   response:
     status:
       code: 200
@@ -90,21 +92,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '525'
+      - '289'
       Etag:
-      - W/"20d-ObJe1wEbAVaHwh8QDbOPSA"
+      - W/"121-qF97ehaFRyqwHcCM88JBwrOmekg"
       Date:
-      - Mon, 20 Feb 2017 15:50:43 GMT
+      - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1487605843231},"meta":{"mapId":"ac39a5ec-6c89-4882-b551-f80d7da275c7","priority":0,"stateHash":"6128deac63daf17625e7537d967759c17be12ee734f905d0ebe21ef8365bdf2d","action":"init","arguments":["blah"]}},"meta":{"linkHash":"16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96"}}'
+      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1504705163742},"meta":{"mapId":"d9b33b62-f551-46f4-aa84-8ade97f3921a","priority":0,"process":"first_process"}},"meta":{"linkHash":"1ff5210be4dee695879ba3726aa752602ba6a65257a017767a6920136f576ccb","evidence":{"state":"DISABLED"}}}'
     http_version: 
-  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 - request:
     method: post
-    uri: http://localhost:3333/segments/16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96/addMessage
+    uri: http://localhost:3333/first_process/segments/1ff5210be4dee695879ba3726aa752602ba6a65257a017767a6920136f576ccb/addMessage
     body:
       encoding: UTF-8
       string: '["Hello, World!","Stratumn"]'
@@ -116,7 +118,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.0.3
+      - http.rb/2.2.2
   response:
     status:
       code: 200
@@ -125,17 +127,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '680'
+      - '418'
       Etag:
-      - W/"2a8-bWtnXPtqIX1tS2UtPCOG3w"
+      - W/"1a2-Qf++0qtfk6/PYxNwMuNTER2li7c"
       Date:
-      - Mon, 20 Feb 2017 15:50:43 GMT
+      - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[{"message":"Hello, World!","author":"Stratumn"}],"updatedAt":1487605843241},"meta":{"mapId":"ac39a5ec-6c89-4882-b551-f80d7da275c7","priority":1,"prevLinkHash":"16141815122ec0006c5be5f358eeefca6e01041fa52d874cf51c39b2e8250c96","stateHash":"1ba4fb037b4d2abb67bccf371d3e6b761e3635ee0bf2c7ce48a290d3aa2eaf48","action":"addMessage","arguments":["Hello,
-        World!","Stratumn"]}},"meta":{"linkHash":"b84d601ad14f5f86ad687f182526c7189c98f9f0f3db023afeaa19e5c5d4b02d","evidence":{"state":"DISABLED"},"agentUrl":"http://localhost:3333","segmentUrl":"http://localhost:3333/segments/b84d601ad14f5f86ad687f182526c7189c98f9f0f3db023afeaa19e5c5d4b02d"}}'
+      string: '{"link":{"state":{"title":"blah","messages":[{"message":"Hello, World!","author":"Stratumn"}],"updatedAt":1504705163753},"meta":{"mapId":"d9b33b62-f551-46f4-aa84-8ade97f3921a","priority":1,"process":"first_process","prevLinkHash":"1ff5210be4dee695879ba3726aa752602ba6a65257a017767a6920136f576ccb"}},"meta":{"linkHash":"78cdf481846d2532f1e817ff6c3238110611a3deb2f63fe731c6249e99eaed83","evidence":{"state":"DISABLED"}}}'
     http_version: 
-  recorded_at: Mon, 20 Feb 2017 15:50:43 GMT
+  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 recorded_with: VCR 3.0.3

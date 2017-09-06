@@ -4,6 +4,7 @@
       "value": "one"
     },
     "meta": {
+      "process": "third_process",
       "mapId": "one",
       "priority": 1
     }
