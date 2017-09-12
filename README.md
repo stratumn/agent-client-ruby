@@ -95,9 +95,8 @@ segments = process.find_segments(limit: 10)
 Returns segment from a given raw object.
 
 ```ruby
-######## FIXME
-segment = AgentClient::Agent.from(raw_segment)
-puts segment.agent
+segment = AgentClient::Segment.from(raw_segment)
+puts segment.process
 puts segment.link_hash
 ```
 
