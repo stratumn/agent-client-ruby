@@ -48,10 +48,7 @@ module AgentClient
 
     def self.from(segment)
       agent = Agent.load(segment['meta']['agentUrl'])
-      process = nil
-      agent.processes.each do |pkey, pvalue|
-        process = pvalue if pkey == segment['link']['meta']['process']
-      end
+      process = agent.get segment['link']['meta']['process']
 
       new(process, segment)
     end

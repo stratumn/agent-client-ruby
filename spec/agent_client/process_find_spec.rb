@@ -18,7 +18,7 @@ require 'agent_client'
 
 describe AgentClient::Process, :vcr do
   let(:agent) { AgentClient::Agent.load('http://localhost:3333') }
-  let(:process) { agent.processes['first_process'] }
+  let(:process) { agent.get('first_process') }
 
   describe '#find_segments' do
     context 'with no options' do

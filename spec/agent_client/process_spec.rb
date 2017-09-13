@@ -21,7 +21,7 @@ describe AgentClient::Process, :vcr do
 
   describe '.load' do
     it 'loads an existing process' do
-      process = agent.processes['first_process']
+      process = agent.get('first_process')
 
       expect(process.info).to include('actions')
       expect(process.store_info).to include('adapter')
@@ -34,7 +34,7 @@ describe AgentClient::Process, :vcr do
     end
   end
 
-  let(:process) { agent.processes['first_process'] }
+  let(:process) { agent.get('first_process') }
 
   describe '#create_map' do
     it 'creates a new map' do

@@ -19,7 +19,6 @@ module AgentClient
     include Request
     extend Request
 
-    attr_accessor :processes
     attr_reader :url
 
     def self.load(url)
@@ -37,6 +36,14 @@ module AgentClient
       instance
     end
 
+    def list_processes
+      @processes.values
+    end
+
+    def get(process_name)
+      @processes[process_name]
+    end
+
     def initialize(url)
       @url = url
       @processes = {}
@@ -47,7 +54,7 @@ module AgentClient
                             name,
                             content['processInfo'],
                             content['storeInfo'])
-      processes[name] = process
+      @processes[name] = process
     end
   end
 end

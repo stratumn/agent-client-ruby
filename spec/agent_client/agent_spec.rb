@@ -21,7 +21,9 @@ describe AgentClient::Agent, :vcr do
     it 'loads an existing agent' do
       agent = described_class.load('http://localhost:3333')
 
-      expect(agent.processes).to include('first_process')
+      expect(agent.list_processes.map(&:process_name)).to(
+        include('first_process')
+      )
     end
 
     it 'raises for agent not found' do
