@@ -16,6 +16,7 @@ require 'agent_client/version'
 require 'agent_client/request'
 require 'agent_client/helper'
 require 'agent_client/agent'
+require 'agent_client/process'
 require 'agent_client/segment'
 
 require 'yaml'

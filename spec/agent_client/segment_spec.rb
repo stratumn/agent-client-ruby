@@ -16,7 +16,8 @@ require 'spec_helper'
 require 'agent_client'
 
 describe AgentClient::Segment, :vcr do
-  let(:app) { AgentClient::Agent.load('http://localhost:3333') }
+  let(:agent) { AgentClient::Agent.load('http://localhost:3333') }
+  let(:app) { agent.get('first_process') }
   let(:segment) { app.get_segment(link_hash) }
   let(:link_hash) { app.create_map('blah').link_hash }
 

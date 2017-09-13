@@ -41,7 +41,7 @@ http_interactions:
     uri: http://localhost:3333/first_process/segments
     body:
       encoding: UTF-8
-      string: '["blah"]'
+      string: '["hi"]'
     headers:
       Connection:
       - close
@@ -59,57 +59,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '289'
+      - '287'
       Etag:
-      - W/"121-Bk9oo2Uzi5XBc2nDaW+5Kz0wTjY"
+      - W/"11f-SqwJRqCUAKp76/bH+Skp5QxCIf8"
       Date:
       - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1504705163804},"meta":{"mapId":"f31f567a-dca1-47bc-9edf-eb6e77b6ac89","priority":0,"process":"first_process"}},"meta":{"linkHash":"dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c","evidence":{"state":"DISABLED"}}}'
-    http_version: 
-  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
-- request:
-    method: get
-    uri: http://localhost:3333/first_process/segments/dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost:3333
-      User-Agent:
-      - http.rb/2.2.2
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '289'
-      Etag:
-      - W/"121-Bk9oo2Uzi5XBc2nDaW+5Kz0wTjY"
-      Date:
-      - Wed, 06 Sep 2017 13:39:23 GMT
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1504705163804},"meta":{"mapId":"f31f567a-dca1-47bc-9edf-eb6e77b6ac89","priority":0,"process":"first_process"}},"meta":{"linkHash":"dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c","evidence":{"state":"DISABLED"}}}'
+      string: '{"link":{"state":{"title":"hi","messages":[],"updatedAt":1504705163642},"meta":{"mapId":"e66216f2-9fd7-4623-9a66-50be369b17e4","priority":0,"process":"first_process"}},"meta":{"linkHash":"e0abaf05fffac16ade7ac285fe0c2904cfd8dfed1b8f9f60c8d8beed6803d87e","evidence":{"state":"DISABLED"}}}'
     http_version: 
   recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 - request:
     method: post
-    uri: http://localhost:3333/first_process/segments/dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c/addMessage
+    uri: http://localhost:3333/first_process/segments
     body:
       encoding: UTF-8
-      string: '["Hello, World!","Stratumn"]'
+      string: '["hi"]'
     headers:
       Connection:
       - close
@@ -127,21 +94,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '418'
+      - '287'
       Etag:
-      - W/"1a2-8UedNkx4PG4YIP9kkqp3yZdKpes"
+      - W/"11f-RyI3NoZK4tCkh1W6rDzblLxAzMM"
       Date:
       - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[{"message":"Hello, World!","author":"Stratumn"}],"updatedAt":1504705163818},"meta":{"mapId":"f31f567a-dca1-47bc-9edf-eb6e77b6ac89","priority":1,"process":"first_process","prevLinkHash":"dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c"}},"meta":{"linkHash":"bcfcd1d2d9d171201628e5ef76219be8c20ac514c8ce3bfe1e4a36c57f41f382","evidence":{"state":"DISABLED"}}}'
+      string: '{"link":{"state":{"title":"hi","messages":[],"updatedAt":1504705163645},"meta":{"mapId":"56c98537-9b8c-4579-a8b4-f3421711e155","priority":0,"process":"first_process"}},"meta":{"linkHash":"e1dc8ac06a4e4f18e016c33eb6171e10ee500ab7956e9161d02947faa1b71b73","evidence":{"state":"DISABLED"}}}'
     http_version: 
   recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 - request:
     method: get
-    uri: http://localhost:3333/first_process/segments/dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c
+    uri: http://localhost:3333/first_process/segments
     body:
       encoding: US-ASCII
       string: ''
@@ -160,16 +127,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '289'
+      - '1155'
       Etag:
-      - W/"121-Bk9oo2Uzi5XBc2nDaW+5Kz0wTjY"
+      - W/"483-VUf5Fd0D5oGQrdlDE0abNGBd/2U"
       Date:
       - Wed, 06 Sep 2017 13:39:23 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{"state":{"title":"blah","messages":[],"updatedAt":1504705163804},"meta":{"mapId":"f31f567a-dca1-47bc-9edf-eb6e77b6ac89","priority":0,"process":"first_process"}},"meta":{"linkHash":"dee2e60a35aba8feb6de33ac59610de4f7154a2a5ebfb6058523c834614cdf5c","evidence":{"state":"DISABLED"}}}'
+      string: '[{"link":{"state":{"title":"hi","messages":[],"updatedAt":1504705163642},"meta":{"mapId":"e66216f2-9fd7-4623-9a66-50be369b17e4","priority":0,"process":"first_process"}},"meta":{"linkHash":"e0abaf05fffac16ade7ac285fe0c2904cfd8dfed1b8f9f60c8d8beed6803d87e","evidence":{"state":"DISABLED"}}},{"link":{"state":{"title":"hi","messages":[],"updatedAt":1504705163645},"meta":{"mapId":"56c98537-9b8c-4579-a8b4-f3421711e155","priority":0,"process":"first_process"}},"meta":{"linkHash":"e1dc8ac06a4e4f18e016c33eb6171e10ee500ab7956e9161d02947faa1b71b73","evidence":{"state":"DISABLED"}}}]'
     http_version: 
   recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
 recorded_with: VCR 3.0.3

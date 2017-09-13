@@ -19,44 +19,42 @@ module AgentClient
     include Request
     extend Request
 
-    attr_accessor :url, :agent_info, :store_info
+    attr_reader :url
 
     def self.load(url)
-      attributes = get(url)
+      result = get(url)
+      instance = new(url)
 
-      new(url,
-          attributes['agentInfo'],
-          attributes['storeInfo'])
-    end
+      process_list = result['processes']
+      raise('Agent has not sent the processes') if process_list.nil?
 
-    def initialize(url, agent_info, store_info)
-      self.url = url
-      self.agent_info = agent_info
-      self.store_info = store_info
-    end
-
-    def create_map(*args)
-      result = post(url + '/segments', json: args)
-
-      Segment.new(self, result)
-    end
-
-    def get_map_ids(options = {})
-      get(url + '/maps?' + URI.encode_www_form(options))
-    end
-
-    def find_segments(options = {})
-      result = get(url + '/segments?' + URI.encode_www_form(options))
-
-      result.map do |link|
-        Segment.new(self, link)
+      if process_list.respond_to?('each')
+        process_list.each do |pname, pcontent|
+          instance.add_new_process(pname, pcontent)
+        end
       end
+      instance
     end
 
-    def get_segment(link_hash)
-      result = get(url + '/segments/' + link_hash)
+    def list_processes
+      @processes.values
+    end
 
-      Segment.new(self, result)
+    def get(process_name)
+      @processes[process_name]
+    end
+
+    def initialize(url)
+      @url = url
+      @processes = {}
+    end
+
+    def add_new_process(name, content)
+      process = Process.new(url,
+                            name,
+                            content['processInfo'],
+                            content['storeInfo'])
+      @processes[name] = process
     end
   end
 end
