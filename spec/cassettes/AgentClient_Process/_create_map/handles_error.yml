@@ -12,7 +12,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.2.2
+      - http.rb/2.2.1
   response:
     status:
       code: 200
@@ -21,11 +21,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '802'
+      - '883'
       Etag:
-      - W/"322-R0wTGXHMIYBsS0HQQAQ6jzNLH1E"
+      - W/"373-B/5J2JhvpwKmFF0fUC/oSFGZpGI"
       Date:
-      - Wed, 06 Sep 2017 13:39:23 GMT
+      - Fri, 15 Dec 2017 11:30:22 GMT
       Connection:
       - close
     body:
@@ -33,15 +33,15 @@ http_interactions:
       string: '{"processes":{"first_process":{"name":"first_process","processInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}},"pluginsInfo":[{"name":"T","description":"D"}]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
         memory store","version":"0.1.0"}}},"second_process":{"name":"second_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
         memory store","version":"0.1.0"}}},"third_process":{"name":"third_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
-        memory store","version":"0.1.0"}}}}}'
+        memory store","version":"0.1.0"}}}},"stores":[],"fossilizers":[],"plugins":[{"id":"1","name":"T","description":"D"}]}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
+  recorded_at: Fri, 15 Dec 2017 11:30:22 GMT
 - request:
     method: post
     uri: http://localhost:3333/first_process/segments
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '[]'
     headers:
       Connection:
       - close
@@ -50,7 +50,7 @@ http_interactions:
       Host:
       - localhost:3333
       User-Agent:
-      - http.rb/2.2.2
+      - http.rb/2.2.1
   response:
     status:
       code: 400
@@ -59,16 +59,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '57'
+      - '44'
       Etag:
-      - W/"39-QyKHNX5wN/qSlddLG06rWYMrXTc"
+      - W/"2c-4rt02cFQ93FbW2H967CnsddlpzI"
       Date:
-      - Wed, 06 Sep 2017 13:39:23 GMT
+      - Fri, 15 Dec 2017 11:30:22 GMT
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"link":{},"meta":{"errorMessage":"a title is required"}}'
+      string: '{"status":400,"error":"a title is required"}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 13:39:23 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Fri, 15 Dec 2017 11:30:22 GMT
+recorded_with: VCR 4.0.0
