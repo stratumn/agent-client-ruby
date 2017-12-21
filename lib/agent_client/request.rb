@@ -25,10 +25,6 @@ module AgentClient
     def post(*args)
       result = request(:post, *args)
 
-      if result['meta'] && result['meta']['errorMessage']
-        raise result['meta']['errorMessage']
-      end
-
       result
     end
 

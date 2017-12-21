@@ -38,7 +38,7 @@ describe AgentClient::Process, :vcr do
 
   describe '#create_map' do
     it 'creates a new map' do
-      segment = process.create_map('Test')
+      segment = process.create_map([], 'Test')
 
       expect(segment.state['title']).to eq('Test')
     end
