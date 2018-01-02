@@ -11,14 +11,13 @@
   limitations under the License.
 */
 
-let st_agent = require('stratumn-agent');
+let st_agent = require("@indigoframework/agent");
 
 // Test actions
 const actions = {
-
   init(title) {
     if (!title) {
-      this.reject('a title is required');
+      this.reject("a title is required");
       return;
     }
 
@@ -32,12 +31,12 @@ const actions = {
 
   addMessage(message, author) {
     if (!message) {
-      this.reject('a message is required');
+      this.reject("a message is required");
       return;
     }
 
     if (!author) {
-      this.reject('an author is required');
+      this.reject("an author is required");
       return;
     }
 
@@ -50,7 +49,7 @@ const actions = {
 
   addTag(tag) {
     if (!tag) {
-      this.reject('a tag is required');
+      this.reject("a tag is required");
       return;
     }
 
@@ -64,31 +63,35 @@ const actions = {
 };
 
 const actions2 = {
-  init(a, b, c) { this.append({ a, b, c }); },
-  action(d) { this.state.d = d; this.append(); },
+  init(a, b, c) {
+    this.append({ a, b, c });
+  },
+  action(d) {
+    this.state.d = d;
+    this.append();
+  }
 };
 
 const plugins = [
   {
-    name: 'T',
-    description: 'D'
+    name: "T",
+    description: "D"
   }
 ];
-
 
 module.exports = {
   agentHttpServer(port) {
     // console.log(port);
     return new Promise(resolve => {
       const agent = st_agent.create({ agentUrl: `http://localhost:${port}` });
-      commonStore = st_agent.memoryStore()
-      agent.addProcess('first_process', actions, commonStore, null, {
+      commonStore = st_agent.memoryStore();
+      agent.addProcess("first_process", actions, commonStore, null, {
         plugins,
-        salt: ''
+        salt: ""
       });
-      agent.addProcess('second_process', actions2, commonStore, null);
-      agent.addProcess('third_process', actions2, commonStore, null);
-  
+      agent.addProcess("second_process", actions2, commonStore, null);
+      agent.addProcess("third_process", actions2, commonStore, null);
+
       const server = agent.httpServer(agent, { cors: {} }).listen(port, () => {
         const close = () => new Promise(done => server.close(done));
         resolve(close);

@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3333/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '883'
+      Etag:
+      - W/"373-fb4AfsGoqnIvuM4zbuUc/w"
+      Date:
+      - Tue, 02 Jan 2018 17:26:31 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"processes":{"first_process":{"name":"first_process","processInfo":{"actions":{"init":{"args":["title"]},"addMessage":{"args":["message","author"]},"addTag":{"args":["tag"]}},"pluginsInfo":[{"name":"T","description":"D"}]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}},"second_process":{"name":"second_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}},"third_process":{"name":"third_process","processInfo":{"actions":{"init":{"args":["a","b","c"]},"action":{"args":["d"]}},"pluginsInfo":[]},"storeInfo":{"adapter":{"name":"memory","description":"Stratumn
+        memory store","version":"0.1.0"}}}},"stores":[],"fossilizers":[],"plugins":[{"id":"1","name":"T","description":"D"}]}'
+    http_version: 
+  recorded_at: Tue, 02 Jan 2018 17:26:31 GMT
+- request:
+    method: post
+    uri: http://localhost:3333/first_process/segments
+    body:
+      encoding: UTF-8
+      string: '[[{"linkHash":"linkHash","process":"first_process"}],"Test"]'
+    headers:
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - localhost:3333
+      User-Agent:
+      - http.rb/2.2.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '331'
+      Etag:
+      - W/"14b-E/YKO9t2Dn8nbAnTfKGs6A"
+      Date:
+      - Tue, 02 Jan 2018 17:26:31 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"link":{"state":{"title":"Test","messages":[],"updatedAt":1514913991799},"meta":{"mapId":"d4eaebc4-33cc-48af-8698-3708309977fb","refs":[{"linkHash":"linkHash","process":"first_process"}],"priority":0,"process":"first_process"}},"meta":{"linkHash":"3edc3964140275c32bf10efaa5eaadbc78ac90d4ee534a4b7b2f07011d2a33cf","evidences":[]}}'
+    http_version: 
+  recorded_at: Tue, 02 Jan 2018 17:26:31 GMT
+recorded_with: VCR 3.0.3

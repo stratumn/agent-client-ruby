@@ -19,7 +19,7 @@ module AgentClient
     include Request
     include Helper
 
-    attr_accessor :process, :meta, :state, :link, :link_hash
+    attr_accessor :process, :meta, :state, :link, :link_hash, :references
 
     def initialize(process, obj)
       self.process = process
@@ -28,6 +28,7 @@ module AgentClient
       self.meta = link['meta']
       self.state = link['state']
       self.link_hash = obj['meta']['linkHash']
+      self.references = meta['refs']
 
       process.info['actions'].each do |(method, _)|
         add_transition_method(method)

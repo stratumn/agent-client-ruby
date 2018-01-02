@@ -43,6 +43,16 @@ describe AgentClient::Process, :vcr do
       expect(segment.state['title']).to eq('Test')
     end
 
+    it 'creates a new map with references' do
+      ref = { linkHash: 'linkHash', process: 'first_process' }
+      segment = process.create_map(
+        [ref],
+        'Test'
+      )
+
+      expect(segment.references.first['linkHash']).to eq(ref[:linkHash])
+    end
+
     it 'handles error' do
       expect { process.create_map }.to raise_exception(StandardError)
     end

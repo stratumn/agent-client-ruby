@@ -12,7 +12,7 @@ code :: https://github.com/stratumn/agent-client-ruby
 Add this line to your agent's Gemfile:
 
 ```ruby
-gem 'stratumn_agent_client'
+gem 'indigoframework_agent_client'
 ```
 
 And then execute:
@@ -21,7 +21,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install stratumn_agent_client
+    $ gem install indigoframework_agent_client
 
 ## Quickstart
 
