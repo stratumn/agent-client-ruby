@@ -51,14 +51,14 @@ agent = AgentClient::Agent.load('http://localhost:3000')
 puts agent.list_processes()
 ```
 
-#### AgentClient::Process#create_map(\*args)
+#### AgentClient::Process#create_map(references, \*args)
 
 Creates a new map in the agent.
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
 process = agent.get('process_name')
-segment = process.create_map('My message map')
+segment = process.create_map([], 'My message map')
 ```
 
 #### AgentClient::Agent.get_segment(hash)
@@ -124,7 +124,7 @@ segments = process.find_segments
 segments.map { |segment| segment.load }
 ```
 
-#### AgentClient::Segment#transition_function(\*args)
+#### AgentClient::Segment#transition_function(references, \*args)
 
 Executes a transition function and returns the new segment.
 
@@ -132,10 +132,10 @@ Executes a transition function and returns the new segment.
 agent = AgentClient::Agent.load('http://localhost:3000')
 process = agent.get('process_name')
 segment = process.get_segment('aee5427')
-new_segment = segment.addMessage('Hello, World!')
+new_segment = segment.addMessage([], 'Hello, World!')
 
 # underscore version is also available
-new_segment = segment.add_message('Hello, World!')
+new_segment = segment.add_message([], 'Hello, World!')
 ```
 
 ## Development
