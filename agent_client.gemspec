@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Interact with your Indigo agent from your ruby app'
   spec.homepage      = 'https://github.com/stratumn/agent-client-ruby'
-  spec.license       = 'MPL-2.0'
+  spec.license       = 'Apache-2.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
