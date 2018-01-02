@@ -19,12 +19,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'agent_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'stratumn_agent_client'
+  spec.name          = 'indigoframework_agent_client'
   spec.version       = AgentClient::VERSION
   spec.authors       = ['Stratumn Team']
   spec.email         = ['stratumn@gmail.com']
 
-  spec.summary       = 'Interact with your Stratumn agent from your ruby app'
+  spec.summary       = 'Interact with your Indigo agent from your ruby app'
   spec.homepage      = 'https://github.com/stratumn/agent-client-ruby'
   spec.license       = 'MPL-2.0'
 
@@ -38,9 +38,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rubocop', '~> 0.52'
   spec.add_development_dependency 'vcr', '~> 3.0'
   spec.add_development_dependency 'webmock', '~> 2.1'
-  spec.add_development_dependency 'rubocop', '~> 0.42'
 
   spec.add_runtime_dependency 'http', '~> 2.0'
 end

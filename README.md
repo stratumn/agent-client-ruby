@@ -1,11 +1,11 @@
-# Agent client for Ruby [ALPHA - incompatible with production]
+# Agent client for Ruby
 
 [![build status](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)](https://travis-ci.org/stratumn/agent-client-ruby.svg?branch=master)
 [![Gem Version](https://badge.fury.io/rb/stratumn_agent_client.svg)](https://badge.fury.io/rb/stratumn_agent_client)
 
-Interact with your Stratumn agent from your ruby agent
+Interact with your Indigo agent from your ruby code.
 
-code  :: https://github.com/stratumn/agent-client-ruby
+code :: https://github.com/stratumn/agent-client-ruby
 
 ## Installation
 
@@ -51,7 +51,7 @@ agent = AgentClient::Agent.load('http://localhost:3000')
 puts agent.list_processes()
 ```
 
-#### AgentClient::Process#create_map(*args)
+#### AgentClient::Process#create_map(\*args)
 
 Creates a new map in the agent.
 
@@ -77,11 +77,12 @@ puts segment.link_hash
 Returns existing segments.
 
 Available options are:
-- `offset`: offset of first returned segments
-- `limit`: limit number of returned segments
-- `mapIds`: return segments with one of the specified map IDs
-- `prevLinkHash`: return segments with specified previous link hash
-- `tags`: return segments that contains all the tags (array)
+
+* `offset`: offset of first returned segments
+* `limit`: limit number of returned segments
+* `mapIds`: return segments with one of the specified map IDs
+* `prevLinkHash`: return segments with specified previous link hash
+* `tags`: return segments that contains all the tags (array)
 
 ```ruby
 agent = AgentClient::Agent.load('http://localhost:3000')
@@ -123,7 +124,7 @@ segments = process.find_segments
 segments.map { |segment| segment.load }
 ```
 
-#### AgentClient::Segment#transition_function(*args)
+#### AgentClient::Segment#transition_function(\*args)
 
 Executes a transition function and returns the new segment.
 
