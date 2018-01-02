@@ -14,7 +14,7 @@
 
 module AgentClient
   ##
-  # Represents a Stratumn process
+  # Represents an Indigo process
   class Process
     include Request
     extend Request

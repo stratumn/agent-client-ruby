@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Stratum Team",
+  "author": "Stratumn Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "stratumn-agent": "^0.12.3"
+    "@indigoframework/agent": "^0.2.0"
   }
 }

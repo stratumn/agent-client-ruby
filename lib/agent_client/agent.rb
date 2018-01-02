@@ -14,7 +14,7 @@
 
 module AgentClient
   ##
-  # Represents a Stratumn agent
+  # Represents an Indigo agent
   class Agent
     include Request
     extend Request
